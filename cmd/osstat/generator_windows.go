@@ -6,7 +6,7 @@ var generators []generator
 
 func init() {
 	generators = []generator{
-		&uptimeGenerator{},
-		&memoryGenerator{},
+		uptimeGenerator,
+		memoryGenerator,
 	}
 }

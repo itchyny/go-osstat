@@ -3,25 +3,20 @@
 package main
 
 import (
+	"iter"
+
 	"github.com/mackerelio/go-osstat/network"
 )
 
-type networkGenerator struct {
-	networks []network.Stats
-	err      error
-}
-
-func (gen *networkGenerator) Get() {
-	gen.networks, gen.err = network.Get()
-}
-
-func (gen *networkGenerator) Error() error {
-	return gen.err
-}
-
-func (gen *networkGenerator) Print(out chan<- value) {
-	for _, network := range gen.networks {
-		out <- value{"network." + network.Name + ".rx_bytes", network.RxBytes, "bytes"}
-		out <- value{"network." + network.Name + ".tx_bytes", network.TxBytes, "bytes"}
+func networkGenerator() (iter.Seq[value], error) {
+	networks, err := network.Get()
+	if err != nil {
+		return nil, err
 	}
+	return func(yield func(value) bool) {
+		for _, network := range networks {
+			yield(value{"network." + network.Name + ".rx_bytes", network.RxBytes, "bytes"})
+			yield(value{"network." + network.Name + ".tx_bytes", network.TxBytes, "bytes"})
+		}
+	}, nil
 }
