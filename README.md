@@ -3,7 +3,7 @@ This is a library to get system metrics like cpu load and memory usage.
 The library is created for [mackerel-agent](https://github.com/mackerelio/mackerel-agent).
 
 [![GoDev](https://pkg.go.dev/badge/github.com/mackerelio/go-osstat)](https://pkg.go.dev/github.com/mackerelio/go-osstat)
-[![Build Status](https://github.com/mackerelio/go-osstat/workflows/Build/badge.svg)](https://github.com/mackerelio/go-osstat/workflows/Build/badge.svg)
+[![Build Status](https://github.com/mackerelio/go-osstat/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/mackerelio/go-osstat/actions/workflows/main.yml?query=branch%3Amaster)
 
 ## Example
 ```go
@@ -83,7 +83,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+    https://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
