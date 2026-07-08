@@ -6,10 +6,10 @@ var generators []generator
 
 func init() {
 	generators = []generator{
-		&loadavgGenerator{},
-		&uptimeGenerator{},
-		&cpuGenerator{},
-		&memoryGenerator{},
-		&networkGenerator{},
+		loadavgGenerator,
+		uptimeGenerator,
+		cpuGenerator,
+		memoryGenerator,
+		networkGenerator,
 	}
 }

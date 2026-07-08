@@ -6,9 +6,9 @@ var generators []generator
 
 func init() {
 	generators = []generator{
-		&loadavgGenerator{},
-		&uptimeGenerator{},
-		&memoryGenerator{},
-		&networkGenerator{},
+		loadavgGenerator,
+		uptimeGenerator,
+		memoryGenerator,
+		networkGenerator,
 	}
 }
